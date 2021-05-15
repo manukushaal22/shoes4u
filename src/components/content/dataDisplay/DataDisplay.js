@@ -11,11 +11,19 @@ import data from "../database";
 class DataDisplay extends Component{
     constructor(props) {
         super(props);
+        let query = props.query !== undefined && props.query !== null
         this.state = {
             prods: null,
             sortBy: null,
+            query: query,
             sortOrder: "asc"
         };
+    }
+
+    componentDidMount() {
+        if(this.state.query){
+            this.search(this.props.query);
+        }
     }
 
     sortLogic = (a,b) => {
@@ -36,11 +44,9 @@ class DataDisplay extends Component{
     }
 
     filteredProducts = () => {
-        console.log("afdd")
         let prods = this.props.dataSource.prodData.products;
         if(this.state.sortBy)
             prods = prods.sort(this.sortLogic)
-        console.log(prods)
         let filters = this.props.dataSource.filtersApplied;
         let minCost = this.props.dataSource.priceRange !== undefined ? this.props.dataSource.priceRange[0] : 0
         let maxCost = this.props.dataSource.priceRange !== undefined ? this.props.dataSource.priceRange[1] : 1000
@@ -57,12 +63,13 @@ class DataDisplay extends Component{
             return false;
         })
     }
-    search = (event) => {
-        let val = event.target.value;
-        let prods = this.filteredProducts();
+    search = (val) => {
+        let prods = data.products
+        document.getElementById("searchBar").value = val;
         if(val.length<1) {
             this.setState({
-                prods: null
+                prods: null,
+                query: false
             })
             return prods;
         }
@@ -74,6 +81,7 @@ class DataDisplay extends Component{
         })
         this.setState({
             prods: final,
+            query: false
         })
         return final;
     }
@@ -99,7 +107,7 @@ class DataDisplay extends Component{
             <div className="display">
                 <div className={"respp"} style={{display: "flex", flexBasis:"auto"}}>
                     <form className={classes.root} noValidate autoComplete="off" style={{flexGrow:1}}>
-                        <TextField id="searchBar" label="Search" variant="outlined" onInput={this.search} style={{width:500}}/>
+                        <TextField id="searchBar" label="Search" variant="outlined" onInput={(event) => this.search(event.target.value)} style={{width:500}} />
                     </form>
                     <FormControl variant="outlined" className={classes.formControl} style={{flexGrow:1,maxWidth:150, paddingRight:50,marginLeft:50}}>
                         <InputLabel id="demo-simple-select-outlined-label">SortBy</InputLabel>

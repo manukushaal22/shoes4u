@@ -39,7 +39,7 @@ class Content extends Component{
                     <DataController  dataSource={data} displayTrigger={this.updateDisplay} />
                 </div>
                 <div className="content-panel-display">
-                    <DataDisplay dataSource={this.state.dataSource}/>
+                    <DataDisplay dataSource={this.state.dataSource} query={this.props.query}/>
                 </div>
             </div>
         );

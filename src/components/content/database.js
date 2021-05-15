@@ -5,6 +5,7 @@ let data = {
             cost: 50,
             color: "blue",
             size: "M",
+            brand: "nike",
             imgName: "tablet1.jpg"
         },
         {
@@ -12,6 +13,7 @@ let data = {
             cost: 10,
             color: "blue",
             size: "M",
+            brand: "adidas",
             imgName: "tablet2.jpg"
         },
         {
@@ -19,6 +21,7 @@ let data = {
             cost: 100,
             color: "blue",
             size: "M",
+            brand: "adidas",
             imgName: "tablet3.jpg"
         },
         {
@@ -26,6 +29,7 @@ let data = {
             cost: 799,
             color: "black",
             size: "M",
+            brand: "reebok",
             imgName: "tab8.jpg"
         },
         {
@@ -33,6 +37,7 @@ let data = {
             cost: 510,
             color: "red",
             size: "M",
+            brand: "nike",
             imgName: "tablet1.jpg"
         },
         {
@@ -40,6 +45,7 @@ let data = {
             cost: 180,
             color: "white",
             size: "L",
+            brand: "nike",
             imgName: "tablet2.jpg"
         },
         {
@@ -47,6 +53,7 @@ let data = {
             cost: 900,
             color: "red",
             size: "L",
+            brand: "nike",
             imgName: "tablet3.jpg"
         },
 
@@ -61,6 +68,9 @@ let data = {
         {
             name: "size"
         },
+        {
+            name: "brand"
+        },
     ],
     searchCriteria: [
         {
@@ -68,6 +78,9 @@ let data = {
         },
         {
             name: "cost"
+        },
+        {
+            name: "brand"
         },
     ],
     sorter: [

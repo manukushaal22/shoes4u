@@ -20,7 +20,7 @@ class FilterGroup extends Component{
                     ...stateData,
                     [fil.name]: {
                         ...stateData[fil.name],
-                        [obj[fil.name]]: true
+                        [obj[fil.name]]: false
                     }
                 }
             }

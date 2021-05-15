@@ -10,7 +10,7 @@ class Header extends Component{
                     <div className={"header-nav-item"}>
                         <img src="shoe.png" onClick="window.location.href='index.html'"  alt={"shoe_logo"}/>
                     </div>
-                    <div className={"header-nav-item"}>
+                    <div className={"header-nav-item"} style={{cursor: "pointer", userSelect: "none"}} onClick={() => window.location.href="/"}>
                         <p>SHOES4U</p>
                     </div>
                     <div className={"header-nav-item"}>

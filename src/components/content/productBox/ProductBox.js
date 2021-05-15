@@ -17,7 +17,7 @@ class ProductBox extends React.Component{
     render() {
         return (
             <div className="box1">
-                <img src={"img/"+this.props.prodProps.imgName} alt={this.props.prodProps.imgName}/>
+                <img src={"http://localhost:3000/img/"+this.props.prodProps.imgName} alt={this.props.prodProps.imgName}/>
                 <p style={{fontWeight: "bold",wordSpacing: 50}}>{this.props.prodProps.name} ₹{this.props.prodProps.cost}</p>
                 {
                     Object.keys(this.props.prodProps).filter((a)=> (!["cost","imgName","name"].includes(a))).map((a) => (

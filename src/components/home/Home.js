@@ -6,9 +6,9 @@ class Home extends Component{
 
     render() {
         return (
-            <div className="home">
+            <div className="home" style={{overflow: "hidden"}}>
                 <Header />
-                <Content />
+                <Content query={this.props.match.params.query}/>
             </div>
         );
     }
