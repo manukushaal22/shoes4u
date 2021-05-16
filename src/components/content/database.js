@@ -135,6 +135,12 @@ let data = {
         {
             name: "gender"
         },
+        {
+            name: "brand"
+        },
+        {
+            name: "gender"
+        },
 
     ],
     searchCriteria: [

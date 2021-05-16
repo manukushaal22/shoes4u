@@ -52,19 +52,33 @@ class DataDisplay extends Component{
         let maxCost = this.props.dataSource.priceRange !== undefined ? this.props.dataSource.priceRange[1] : 1000
         let filCost = prods.filter((prod) => prod.cost>=minCost && prod.cost<=maxCost);
         if(filters === undefined || filters === null) return filCost;
+        let truFilt = {}
+        for(const fk in filters){
+            let t = []
+            for(const kk in filters[fk]){
+                if(filters[fk][kk])
+                    t.push(kk)
+            }
+            truFilt[fk] = t;
+        }
+        console.log(truFilt)
         return filCost.filter((prod) => {
-            for (const filterKey in filters) {
-                let filter = filters[filterKey];
+            for (const filterKey in truFilt) {
+                let filter = truFilt[filterKey];
                 for (const prodKey in prod) {
                     let prodVal = prod[prodKey];
-                    if (filterKey === prodKey && filter[prodVal] && filter[prodVal] === true) return true
+                    if (prodKey === filterKey && filter.length>0 && !filter.includes(prodVal)) return false
                 }
             }
-            return false;
+            return true;
         })
     }
-    search = (val) => {
-        let prods = data.products
+    search = (chng) => {
+        let ele=document.getElementById("searchBar")
+        let val = ele? ele.value : null
+        let prods = this.filteredProducts();
+        if(val===null || val===undefined || val==="")
+            return prods
         document.getElementById("searchBar").value = val;
         if(val.length<1) {
             this.setState({
@@ -79,10 +93,11 @@ class DataDisplay extends Component{
             }
             return false;
         })
-        this.setState({
-            prods: final,
-            query: false
-        })
+        if(chng)
+            this.setState({
+                prods: final,
+                query: false
+            })
         return final;
     }
 
@@ -107,7 +122,7 @@ class DataDisplay extends Component{
             <div className="display">
                 <div className={"respp"} style={{display: "flex", flexBasis:"auto"}}>
                     <form className={classes.root} noValidate autoComplete="off" style={{flexGrow:1}}>
-                        <TextField id="searchBar" label="Search" variant="outlined" onInput={(event) => this.search(event.target.value)} style={{width:500}} />
+                        <TextField id="searchBar" label="Search" variant="outlined" onInput={(event) => this.search(true)} style={{width:500}} />
                     </form>
                     <FormControl variant="outlined" className={classes.formControl} style={{flexGrow:1,maxWidth:150, paddingRight:50,marginLeft:50}}>
                         <InputLabel id="demo-simple-select-outlined-label">SortBy</InputLabel>
@@ -146,7 +161,7 @@ class DataDisplay extends Component{
                         </Select>
                     </FormControl>
                 </div>
-                <ProductGroup groupId={"products"} groupName={"Products"} productList={this.state.prods || this.filteredProducts()} />
+                <ProductGroup groupId={"products"} groupName={"Products"} productList={this.search(false)} />
             </div>
         );
     }
