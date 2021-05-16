@@ -20,7 +20,7 @@ class ProductBox extends React.Component{
                 <img src={"http://localhost:3000/img/"+this.props.prodProps.imgName} alt={this.props.prodProps.imgName}/>
                 <p style={{fontWeight: "bold",wordSpacing: 50}}>{this.props.prodProps.name} ₹{this.props.prodProps.cost}</p>
                 {
-                    Object.keys(this.props.prodProps).filter((a)=> (!["cost","imgName","name"].includes(a))).map((a) => (
+                    Object.keys(this.props.prodProps).filter((a)=> (!["cost","imgName","name", "color","gender"].includes(a))).map((a) => (
                         <p style={{textAlign: "left", paddingLeft: 20, fontSize:"90%"}}><b>{a}:</b>    {this.props.prodProps[a]}</p>
                     ))
                 }

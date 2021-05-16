@@ -1,66 +1,127 @@
 let data = {
     products: [
         {
-            name: "Cheston",
-            cost: 50,
-            color: "blue",
-            size: "M",
+            name: "MaxWomen",
+            cost: 6000,
             brand: "nike",
-            imgName: "tablet1.jpg"
+            color: "Pink",
+            size: "6",
+            gender: "Female",
+            imgName: "images (19).jpeg"
         },
         {
-            name: "Allercet",
-            cost: 10,
-            color: "blue",
-            size: "M",
+            name: "AirMax270",
+            cost: 9000,
+            color: "Black",
+            size: "7",
+            brand: "nike",
+            gender: "Male",
+            imgName: "images (17).jpeg"
+        },
+        {
+            name: "MaxImpact",
+            cost: 4637,
+            color: "Red",
+            size: "8",
+            brand: "nike",
+            gender: "Male",
+            imgName: "images (16).jpeg"
+        },
+        {
+            name: "MaxReact",
+            cost: 15000,
+            color: "White",
+            size: "9",
+            brand: "nike",
+            gender: "Male",
+            imgName: "images (18).jpeg"
+        },
+        {
+            name: "UltraBoost",
+            cost: 6000,
+            color: "White",
+            size: "6",
             brand: "adidas",
-            imgName: "tablet2.jpg"
+            gender: "Female",
+            imgName: "images (23).jpeg"
         },
         {
-            name: "Tylenol",
-            cost: 100,
-            color: "blue",
-            size: "M",
+            name: "Booster",
+            cost: 10500,
+            color: "White",
+            size: "8",
             brand: "adidas",
-            imgName: "tablet3.jpg"
+            gender: "Male",
+            imgName: "images (20).jpeg"
         },
         {
-            name: "aefae",
-            cost: 799,
-            color: "black",
-            size: "M",
+            name: "Kaptir",
+            cost: 8000,
+            color: "Black",
+            size: "9",
+            brand: "adidas",
+            gender: "Male",
+            imgName: "images (27).jpeg"
+        },
+        {
+            name: "FluidFlow",
+            cost: 5000,
+            color: "Grey",
+            size: "9",
+            brand: "adidas",
+            gender: "Male",
+            imgName: "greyshoe.jpg"
+        },
+        {
+            name: "Dynamica",
+            cost: 8000,
+            color: "White",
+            size: "8",
             brand: "reebok",
-            imgName: "tab8.jpg"
+            gender: "Female",
+            imgName: "images (24).jpeg"
         },
         {
-            name: "afade",
-            cost: 510,
-            color: "red",
-            size: "M",
-            brand: "nike",
-            imgName: "tablet1.jpg"
+            name: "Laceup",
+            cost: 4000,
+            color: "Black",
+            size: "10",
+            brand: "reebok",
+            gender: "Male",
+            imgName: "images (25).jpeg"
         },
         {
-            name: "Allerafafcet",
-            cost: 180,
-            color: "white",
-            size: "L",
-            brand: "nike",
-            imgName: "tablet2.jpg"
+            name: "Ride",
+            cost: 3000,
+            color: "Grey",
+            size: "11",
+            brand: "reebok",
+            gender: "Male",
+            imgName: "images (26).jpeg"
         },
         {
-            name: "Tylefafdnol",
-            cost: 900,
-            color: "red",
-            size: "L",
-            brand: "nike",
-            imgName: "tablet3.jpg"
+            name: "CardiB",
+            cost: 11000,
+            color: "Blue",
+            size: "6",
+            brand: "reebok",
+            gender: "Female",
+            imgName: "cardib.jpg"
         },
 
     ],
     filters: [
         {
-            name: "name"
+            name: "color"
+        },
+        {
+            name: "size"
+        },
+        {
+            name: "brand"
+        },
+        {
+            name: "gender"
         },
         {
             name: "color"
@@ -71,6 +132,10 @@ let data = {
         {
             name: "brand"
         },
+        {
+            name: "gender"
+        },
+
     ],
     searchCriteria: [
         {

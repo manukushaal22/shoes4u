@@ -23,7 +23,6 @@ class Main extends Component{
                 position: "absolute",
                 top: "60px"
             }}>
-                <Search />
                 <Ad />
                 {
                     uniqBrands && uniqBrands.map((b) => (

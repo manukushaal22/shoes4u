@@ -14,7 +14,7 @@ class Header extends Component{
                         <p>SHOES4U</p>
                     </div>
                     <div className={"header-nav-item"}>
-                        <button className="header-nav-login" href={"#"}>Login</button>
+                        <button className="header-nav-login" onClick={() => window.location.href = "search"}>Search</button>
                     </div>
                 </nav>
             </div>
